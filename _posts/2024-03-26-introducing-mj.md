@@ -4,7 +4,7 @@ description: 이 블로그를 시작하기까지 관심사 흐름 총정리
 author: mj
 date: 2024-03-27 22:07:00 +0900
 categories: [life, review]
-tags: [diary]
+tags: [review]
 pin: true
 ---
 
