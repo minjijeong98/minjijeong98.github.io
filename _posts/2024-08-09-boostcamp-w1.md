@@ -5,7 +5,7 @@ author: mj
 date: 2024-08-09 15:50:00 +0900
 categories: [education, boostcamp, review]
 tags: [boostcamp, review, AI, NLP]
-pin: true
+pin: false
 ---
 ## 주간 학습 내용 요약
 
