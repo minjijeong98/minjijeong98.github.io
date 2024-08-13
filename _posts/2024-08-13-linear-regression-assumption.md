@@ -2,7 +2,7 @@
 title: linear regression의 가정
 description: 선형회귀의 주요한 가정의 의미와 확인 방법을 살펴본다
 author: mj
-date: 2024-08-13 15:00:00 +0900
+date: 2024-08-13 15:30:00 +0900
 categories: [statistics, linear regression]
 tags: [statistics]
 pin: false
