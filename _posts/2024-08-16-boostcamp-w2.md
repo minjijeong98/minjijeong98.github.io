@@ -2,7 +2,7 @@
 title: Boostcamp 2주차 회고
 description: Boostcamp AI Tech 7기 NLP Track - 2주차 회고
 author: mj
-date: 2024-08-16 15:50:00 +0900
+date: 2024-08-16 14:00:00 +0900
 categories: [education, boostcamp]
 tags: [boostcamp, review, AI, NLP]
 pin: false
@@ -20,7 +20,7 @@ pin: false
 
 ### 2024-08-14 수
 - keyword: RNN, LSTM, Attention, Transformer
-- attention is all you need 논문을 처음 읽고, 많이 당황했던 기억이 떠오른다. 이번 강의 들으면서 역사적 맥락부터, 왜 transformer라는 모델이 등장했는지, 핵심 구조가 어떻게 구성되어있는지 드디어 이해할 수 있어 기분 좋았다:)
+- attention is all you need 논문을 처음 읽고, 많이 당황했던 기억이 떠오른다. 이번 강의 들으면서 역사적 맥락부터, 왜 transformer라는 모델이 등장했는지, 핵심 구조가 어떻게 구성되어있는지 드디어 이해할 수 있어 기분 좋았다.
 - positional encoding에서 왜 sin과 cos 함수를 활용하는지, 그리고 벡터 임베딩과 덧셈 연산을 취했을 때 정보가 섞여버리는 문제가 없는지 궁금해졌다. 이에 그 이유를 조사해 피어세션에서 공유했다.
 
 ### 2024-08-15 목
