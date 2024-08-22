@@ -94,14 +94,4 @@ pin: false
 
 # Reference
 
-- [데이터의 정규화(normalization) 또는 표준화(standardization)이 필요한 이유](https://mozenworld.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98-%EC%A0%95%EA%B7%9C%ED%99%94normalization-%EB%98%90%EB%8A%94-%ED%91%9C%EC%A4%80%ED%99%94standardization%EC%9D%B4-%ED%95%84%EC%9A%94%ED%95%9C-%EC%9D%B4%EC%9C%A0)
-- [정규화 정리1 - Scaling, Regularization, Standardization | 너드팩토리 블로그](https://blog.nerdfactory.ai/2021/06/15/Normalization-Theorem-1.html)
-- [machine learning - Zero Mean and Unit Variance - Data Science Stack Exchange](https://datascience.stackexchange.com/questions/32109/zero-mean-and-unit-variance)
-- [machine learning - Why do we have to normalize the input for an artificial neural network? - Stack Overflow](https://stackoverflow.com/questions/4674623/why-do-we-have-to-normalize-the-input-for-an-artificial-neural-network/4674770#4674770)
-- [comp.ai.neural-nets FAQ, Part 2 of 7: LearningSection - Should I normalize/standardize/rescale the](http://www.faqs.org/faqs/ai-faq/neural-nets/part2/section-16.html)
-- [What is Feature Scaling and Why is it Important](https://www.analyticsvidhya.com/blog/2020/04/feature-scaling-machine-learning-normalization-standardization/)
-- [About Feature Scaling and Normalization](https://sebastianraschka.com/Articles/2014_about_feature_scaling.html#about-standardization)
-- [정규화, 표준화 질문드립니다. - 인프런 | 커뮤니티 질문&답변](https://www.inflearn.com/community/questions/65387/%EC%A0%95%EA%B7%9C%ED%99%94-%ED%91%9C%EC%A4%80%ED%99%94-%EC%A7%88%EB%AC%B8%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4)
-- [데이터 전처리의 피처 스케일링(Feature Scaling)](https://glanceyes.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EC%B2%98%EB%A6%AC%EC%9D%98-%ED%94%BC%EC%B2%98-%EC%8A%A4%EC%BC%80%EC%9D%BC%EB%A7%81Feature-Scaling)
-- [Machine Learning: When should I apply data normalization/standardization? - Quora](https://www.quora.com/Machine-Learning-When-should-I-apply-data-normalization-standardization)
-- [When do you normalize and when do you standardize the features of a dataset? - Quora](https://www.quora.com/When-do-you-normalize-and-when-do-you-standardize-the-features-of-a-dataset)
+- 추가 예정
