@@ -16,8 +16,8 @@ pin: true
 - 내 인지 능력과 체력에 한계가 있는데, 하고 싶은 것들에 욕심내서 너무 많이 시도한 것 같기도 했다. 에너지가 분산되고 괜히 마음이 조급해지지 않도록, 내 일상을 좀 더 단순하게 만드는 방법을 생각해봐야겠다. 우선순위를 명확하게 정해보자. 그래도 공부하고싶었던 것들 하나하나 확인하다보니 기분 좋긴 했음! 
 
 #### 2024-08-20 화
-![2024 미래에셋증권 AI·Data 페스티벌 포스터](/assets/img/2024miraeasset1.png){: height="200"}
-![2024 미래에셋증권 AI·Data 페스티벌 결선 설명회 발표장](/assets/img/2024miraeasset2.jpeg){: height="200"}
+![2024 미래에셋증권 AI·Data 페스티벌 포스터](/assets/img/2024miraeasset1.png){: height="20"}
+![2024 미래에셋증권 AI·Data 페스티벌 결선 설명회 발표장](/assets/img/2024miraeasset2.jpeg){: height="20"}
 - **keyword**: 2024 미래에셋증권 AI·Data 페스티벌 결선 설명회
 - 올해 미래에셋증권 빅데이터 페스티벌의 결선 참여자를 대상으로 네이버 1784에서 설명회가 진행됐다. 작년 대상 수상자로서의 간단한 소감 및 소소한 팁들을 발표하러 다녀왔다. 작년에 학교에서 공모전과 석사 졸업논문을 병행하며 정신없었던ㅋㅋ 기억이 생생한데 그게 벌써 1년 전이라니.. 시간이 정말 빠르다. 발표 준비하면서 당시 공모전 준비하던 때를 되돌아보는게 재밌기도 했고, 2주만에 다시 간 1784도 정말 반가웠다:)
 
@@ -32,8 +32,8 @@ pin: true
 
 #### 2024-08-22 목
 _예전, 친구들과 만들었던 구글닥스의 가이드라인 및 질문답변 일부_
-![qna_home](/assets/img/qna_ex1.png){: height="200"}
-![qna_ex](/assets/img/qna_ex2.png){: height="200"}
+![qna_home](/assets/img/qna_ex1.png){: height="20"}
+![qna_ex](/assets/img/qna_ex2.png){: height="20"}
 - **keyword**: 시계열/이미지/텍스트 데이터, `seaborn`, HCI
 - 통계 분석 떄마다 날 혼란스럽게 하는 시계열 데이터 단어가 다시 등장했다. 시계열 데이터를 제대로 공부해본 적이 없는데, 고객의 행동을 분석하거나 데이터의 시간별 추이 등을 확인할 때 등, 시계열 데이터가 정말 자주 사용돼서, 잘 이해해둬야겠다는 생각이 다시금 들었다. 강의에서는 시계열 데이터의 개념만 가볍게 다뤘지만, '아 맞다 다 시계열도 공부하고 싶었지..'의 기억을 되살리는 계기가 됐다. 이것도 내 someday 리스트에 추가다!
 - 텍스트 전처리 부분을 보며, 본격적인 모델 학습 전, (지난한..) 텍스트 전처리가 얼마나 중요했는지 다시 생각해봤다. LLM은 이제 충분히 똑똑하니까 필요 없다!라고 하기엔, LLM은 비싸고, 전처리를 했을 떄 결과 품질이 대체로 더 좋아지고.... 여튼 텍스트 전처리는 중요하다고 다시금 생각했다. 그리고 그 과정에서 또 중요한건 정규표현식! 매 번 gpt에게 조건을 주고 이에 맞는 정규표현식을 작성해달라고 했는데, 한동안은 직접 정규표현식을 작성해보는 연습이 필요하지 싶다. latex 처음 쓸 때 생각하면서 기초 문법 사용해보기!!
@@ -59,8 +59,8 @@ _예전, 친구들과 만들었던 구글닥스의 가이드라인 및 질문답
 
 #### 💥 To Try
 - 다음 피어세션 논문 리뷰에서 BERT 논문 리뷰를 맡기로 했다. 논문 읽기!
-- 성윤님이 추천해주신 책 읽기: [함께 자라기 (김창준)](https://product.kyobobook.co.kr/detail/S000001033071) | [안티프래질 (나심 니콜라스 탈레브)](https://product.kyobobook.co.kr/detail/S000000625400)
-- MLOps 전반적인 개념 잡기: [Machine Learning in Production (Andrew Ng)](https://www.coursera.org/learn/introduction-to-machine-learning-in-production?action=enroll) | [Full Stack Deep Learning](https://fullstackdeeplearning.com/course/2022/)
+- 성윤님이 추천해주신 책 읽기: [함께 자라기 (김창준)](https://product.kyobobook.co.kr/detail/S000001033071), [안티프래질 (나심 니콜라스 탈레브)](https://product.kyobobook.co.kr/detail/S000000625400)
+- MLOps 전반적인 개념 잡기: [Machine Learning in Production (Andrew Ng)](https://www.coursera.org/learn/introduction-to-machine-learning-in-production?action=enroll), [Full Stack Deep Learning](https://fullstackdeeplearning.com/course/2022/)
 
 #### ❓ Question
 - 정보의 선별적 수용이라는게, 연령대가 높아질수록 힘든 것 같다. 단순히 개인에게 '똑똑한 정보 소비'를 요구하는건 개인에게 모든 책임을 전가해버리는 비겁한 전략이라고 생각한다. 그렇다면 NLP 기술을 바탕으로, 가짜 뉴스를 탐지하고 차단하는 모델을 만들어보면 어떨까? 그리고 만든다면 어떤 형태로 서비스되는게, 중장년층의 건강한 미디어 이용에 도움이 될 수 있을까?
