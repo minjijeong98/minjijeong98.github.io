@@ -3,9 +3,9 @@ title: Boostcamp 1주차 회고
 description: Boostcamp AI Tech 7기 - 1주차 회고
 author: mj
 date: 2024-08-09 15:50:00 +0900
-categories: [education, boostcamp]
+categories: [Activities, Boostcamp]
 tags: [boostcamp, review, AI, NLP]
-pin: false
+pin: true
 ---
 # 주간 학습 내용 요약
 
