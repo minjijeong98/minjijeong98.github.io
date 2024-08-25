@@ -14,7 +14,7 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: 우당탕탕 기술로그 # the main title
+title: AI로 세상 읽기 # the main title
 
 tagline: Data, AI, 그리고 약간의 인문학 # it will display as the sub-title
 
