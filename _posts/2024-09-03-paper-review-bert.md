@@ -29,8 +29,8 @@ pin: true
     - 비지도학습 기법 중 하나로, unlabeled data로부터 스스로(self) 학습하는 기법
     - label이 불필요한 대신, 데이터 자체에서 학습 task를 생성한다. 이를 통해 모델이 데이터의 내재된 구조와 피턴을 이해하도록 돕는다.
 - **transfer learning**
-    ![transfer-learning](/assets/img/transfer-learning.png){: width="70%" class="center"}
-    이미지 출처: https://www.aismartz.com/blog/an-introduction-to-transfer-learning/
+    ![transfer-learning](/assets/img/transfer-learning.png){: width="70%"}
+    _이미지 출처: https://www.aismartz.com/blog/an-introduction-to-transfer-learning/_
     - 한 분야의 문제를 해결하기 위해 얻은 지식과 정보를 다른 문제를 푸는데 사용하는 방식 
     - pre-trained model을 labeled data로 재학습시키는 것
     - _Standing on the shoulders of giants_ 라는 문구에 비유 가능
@@ -58,16 +58,17 @@ pin: true
 #### Feature-based approach
 - task-specific architecture를 구성하고, downstream task 학습 시 pre-trained representation (즉, embedding layer)를 부가적인 feature로 사용하는 방법
 - **대표적인 예시**: [ELMo](https://aclweb.org/anthology/N18-1202) (Embeddings from Language Model)
-    ![elmo-3](/assets/img/elmo-3.png){: class="center"}
     - 문맥에 따른 단어의 의미 차이 반영해 모델 학습시키는 방법. 
     - 예를 들어 Bank Account(은행 계좌)와 River Bank(강둑)에서의 Bank가 서로 다른 의미임을 모델이 학습하도록 함 (기존의 Word2Vec 방식에서는 이런 문맥에 따른 단어의 의미 차이 반영하지 못함)
     - ELMo를 기준으로 Feature-based approach를 설명하겠다.
+![elmo-3](/assets/img/elmo-3.png)
+    
 - **Step 1. 문맥을 반영해 word embedding**
     - 각 층의 출력값이 가진 정보는 전부 서로 다른 종류의 정보를 갖고 있을 것이므로, 이들을 모두 활용한다
     - **biLM**: 이를 위해, 순방향과 역방향 언어 모델을 별개의 언어모델로 보고 각각 학습 진행한다
-    ![elmo-1](/assets/img/elmo-1.png){: class="center"}
+    - ![elmo-1](/assets/img/elmo-1.png)
     - **ELMo representation**: 순방향, 역방향 LM 각각에서 해당 time step의 biLM의 각 층의 출력값 가져와 concat하고, 가중합한다
-    ![elmo-2](/assets/img/elmo-2.png){: class="center"}
+    - ![elmo-2](/assets/img/elmo-2.png)
 - **Step 2. shallow bidirectional**
     - BiLM 통해 얻은 ELMo representation과 기존 임베딩 벡터를 concat해서 input으로 사용한다.
     - **shallow**: 순방향과 역방향 언어 모델을 모두 사용하므로 bidirectional LM으로 생각할 수 있지만, 단방향인 LM 2개의 출력값을 이어붙인 것 뿐이다. 따라서 'shallow' bidirectional로 명명하며, 이는 BERT에서의 'deep' bidirectional과 차이를 갖는다.
@@ -126,7 +127,7 @@ pin: true
 
 
 #### Task 1: Masked LM (MLM)
-![bert-3](/assets/img/bert-3.png){: width="60%" class="center"}
+![bert-3](/assets/img/bert-3.png){: width="60%"}
 - 아무런 제약 조건 없이 bidirectional하게 학습 하면, 간접적으로 예측 대상 단어를 참조하게 되어 학습이 어려움. 이에 penalty 부여하는 방법으로써 MLM task 도입함.
 - **MLM**: input token의 일정 비율을 랜덤하게 마스킹하고, context 통해 이 마스킹된 토큰을 예측하는 task
 	- Cloze Test (빈칸 채우기 테스트)에서 영감 얻음
@@ -177,7 +178,7 @@ pin: true
 
 # 5. 실험 결과
 ### GLUE (General Language Understanding Evaluation) 
-![bert-result-1](/assets/img/bert-result-1.png){: width="50%" class="center"}
+![bert-result-1](/assets/img/bert-result-1.png){: width="50%"}
 - 다양한 자연어 이해 task의 모음
 	- **참고**: [GLUE leaderboard](https://gluebenchmark.com/leaderboard) ~~2024.09 현재 시점에서는BERT가 49위~~
 - $\text{BERT}_{\text{BASE}}$와 $\text{BERT}_{\text{LARGE}}$ 모두 기존 방법보다 우수한 성능 보임
@@ -203,8 +204,10 @@ pin: true
 	- *모델 크기의 영향*: 모델 클수록 성능 좋음
 	- *BERT의 feature 기반 접근방식*: fine-tuning과 성능 유사함
 - BERT의 feature 기반 접근방식 
-![bert-result-5](/assets/img/bert-result-5.png){: width="60%"}
 	- BERT는 fine-tuning 및 feature-based approach 모두에서 효과적임
+
+![bert-result-5](/assets/img/bert-result-5.png){: width="60%"}
+
 
 
 # Review
