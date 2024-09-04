@@ -58,10 +58,10 @@ pin: true
 #### Feature-based approach
 - task-specific architecture를 구성하고, downstream task 학습 시 pre-trained representation (즉, embedding layer)를 부가적인 feature로 사용하는 방법
 - **대표적인 예시**: [ELMo](https://aclweb.org/anthology/N18-1202) (Embeddings from Language Model)
+    - ![elmo-3](/assets/img/elmo-3.png)
     - 문맥에 따른 단어의 의미 차이 반영해 모델 학습시키는 방법. 
     - 예를 들어 Bank Account(은행 계좌)와 River Bank(강둑)에서의 Bank가 서로 다른 의미임을 모델이 학습하도록 함 (기존의 Word2Vec 방식에서는 이런 문맥에 따른 단어의 의미 차이 반영하지 못함)
     - ELMo를 기준으로 Feature-based approach를 설명하겠다.
-![elmo-3](/assets/img/elmo-3.png)
     
 - **Step 1. 문맥을 반영해 word embedding**
     - 각 층의 출력값이 가진 정보는 전부 서로 다른 종류의 정보를 갖고 있을 것이므로, 이들을 모두 활용한다
@@ -178,7 +178,7 @@ pin: true
 
 ## 실험 결과
 ### GLUE (General Language Understanding Evaluation) 
-![bert-result-1](/assets/img/bert-result-1.png){: width="50%"}
+![bert-result-1](/assets/img/bert-result-1.png){: width="60%"}
 - 다양한 자연어 이해 task의 모음
 	- **참고**: [GLUE leaderboard](https://gluebenchmark.com/leaderboard) ~~2024.09 현재 시점에서는BERT가 49위~~
 - $\text{BERT}_{\text{BASE}}$와 $\text{BERT}_{\text{LARGE}}$ 모두 기존 방법보다 우수한 성능 보임
@@ -194,7 +194,7 @@ pin: true
 	- 인간만큼은 아니지만, 기존 baseline에 비해서는 우수한 성능 확인
 
 ### SWAG (Situations With Adversarial Generations)
-![bert-result-4](/assets/img/bert-result-4.png){: width="50%"}
+![bert-result-4](/assets/img/bert-result-4.png){: width="60%"}
 - **상식 추론**: 문장이 주어지면, 4개의 선택지 중 가장 그럴듯하게 이어지는 문장 고르는 task
 - 역시나 좋은 성능 보임
 
