@@ -29,8 +29,8 @@ pin: true
     - 비지도학습 기법 중 하나로, unlabeled data로부터 스스로(self) 학습하는 기법
     - label이 불필요한 대신, 데이터 자체에서 학습 task를 생성한다. 이를 통해 모델이 데이터의 내재된 구조와 피턴을 이해하도록 돕는다.
 - **transfer learning**
-    ![transfer-learning](/assets/img/transfer-learning.png)
-    _이미지 출처: https://www.aismartz.com/blog/an-introduction-to-transfer-learning/_
+    ![transfer-learning](/assets/img/transfer-learning.png){: width="70%" class="center"}
+    이미지 출처: https://www.aismartz.com/blog/an-introduction-to-transfer-learning/
     - 한 분야의 문제를 해결하기 위해 얻은 지식과 정보를 다른 문제를 푸는데 사용하는 방식 
     - pre-trained model을 labeled data로 재학습시키는 것
     - _Standing on the shoulders of giants_ 라는 문구에 비유 가능
@@ -51,23 +51,23 @@ pin: true
 # 모델 등장 배경
 ### BERT 이전의 transfer learning 연구
 - BERT 이전에도 Language model의 pre-training은 다수 NLP task에서 우수한 성능 보여왔음
-	- 문장 수준 task: 문장의 관계 전체적으로 분석해 예측하는 것을 목표로 하는 task (예: NLI, paraphrasing)
-	- 토큰 수준 task: 토큰 수준의 세분화된 출력을 생성하는 task (예: NER, QA)
+	- **문장 수준 task**: 문장의 관계 전체적으로 분석해 예측하는 것을 목표로 하는 task (예: NLI, paraphrasing)
+	- **토큰 수준 task**: 토큰 수준의 세분화된 출력을 생성하는 task (예: NER, QA)
 - feature-based approach, fine-tuning approach의 두 가지 주요 접근 존재했음
 
 #### Feature-based approach
 - task-specific architecture를 구성하고, downstream task 학습 시 pre-trained representation (즉, embedding layer)를 부가적인 feature로 사용하는 방법
 - **대표적인 예시**: [ELMo](https://aclweb.org/anthology/N18-1202) (Embeddings from Language Model)
-    - ![elmo-3](/assets/img/elmo-3.png)
+    ![elmo-3](/assets/img/elmo-3.png){: class="center"}
     - 문맥에 따른 단어의 의미 차이 반영해 모델 학습시키는 방법. 
     - 예를 들어 Bank Account(은행 계좌)와 River Bank(강둑)에서의 Bank가 서로 다른 의미임을 모델이 학습하도록 함 (기존의 Word2Vec 방식에서는 이런 문맥에 따른 단어의 의미 차이 반영하지 못함)
     - ELMo를 기준으로 Feature-based approach를 설명하겠다.
 - **Step 1. 문맥을 반영해 word embedding**
     - 각 층의 출력값이 가진 정보는 전부 서로 다른 종류의 정보를 갖고 있을 것이므로, 이들을 모두 활용한다
     - **biLM**: 이를 위해, 순방향과 역방향 언어 모델을 별개의 언어모델로 보고 각각 학습 진행한다
-    - ![elmo-1](/assets/img/elmo-1.png)
+    ![elmo-1](/assets/img/elmo-1.png){: class="center"}
     - **ELMo representation**: 순방향, 역방향 LM 각각에서 해당 time step의 biLM의 각 층의 출력값 가져와 concat하고, 가중합한다
-    - ![elmo-2](/assets/img/elmo-2.png)
+    ![elmo-2](/assets/img/elmo-2.png){: class="center"}
 - **Step 2. shallow bidirectional**
     - BiLM 통해 얻은 ELMo representation과 기존 임베딩 벡터를 concat해서 input으로 사용한다.
     - **shallow**: 순방향과 역방향 언어 모델을 모두 사용하므로 bidirectional LM으로 생각할 수 있지만, 단방향인 LM 2개의 출력값을 이어붙인 것 뿐이다. 따라서 'shallow' bidirectional로 명명하며, 이는 BERT에서의 'deep' bidirectional과 차이를 갖는다.
@@ -85,7 +85,6 @@ pin: true
 - 특히 GPT의 경우, 모든 토큰이 이전 토큰들과의 attention으로만 계산하므로(**constrained self-attention**) 토큰이 아닌 문장 수준의 정보를 반영해야 하는 다음 문장 예측 task나, 양방향의 context 통합이 중요한 QA task와 같은 토큰 수준 작업에서 성능 한계 보임
 - 본 논문에서는 특히 fine-tuning 접근방식에 집중, 기존의 unidirectional 문제 개선해 deep bidirectional context를 반영하는 BERT 제안 (**bidirectional self-attention**)
 
-> [!NOTE] GPT vs. BERT
 > GPT는 next token prediction에 초점을 맞추어 **Transformer decoder** (left-context-only version)만을 사용했고, BERT는 MLM 및 NSP를 위해 self-attention을 수행하는 **Transformer encoder** (bidirectional Transformer)만을 사용했다.
 
 # 4. 모델 구조
@@ -119,8 +118,7 @@ pin: true
 	- **segmentation embedding**: 각 토큰이 문장 A에서 나왔는지, B에서 나왔는지 구분하기 위함
 	- **position embedding**: 단어의 위치 구분하는 임베딩
 
-> [!NOTE] WordPiece 임베딩
-> BPE(Byte Pair Encoding)의 변형 알고리즘이다. 빈도수에 기반해 가장 많이 등장한 쌍을 병합하는 BPE와는 달리, WordPiece는 병합되었을 때 corpus의 likelihood를 가장 높이는 쌍을 병합한다.
+> WordPiece 임베딩은 BPE(Byte Pair Encoding)의 변형 알고리즘이다. 빈도수에 기반해 가장 많이 등장한 쌍을 병합하는 BPE와는 달리, WordPiece는 병합되었을 때 corpus의 likelihood를 가장 높이는 쌍을 병합한다.
 
 ### Step 1. Pre-Training BERT
 - Masked LM(MLM)과 Next Sentence Prediction(NSP)의 두 가지 unsupervised-task 동시에 사용해 pre-training 수행
@@ -128,7 +126,7 @@ pin: true
 
 
 #### Task 1: Masked LM (MLM)
-![bert-3](/assets/img/bert-3.png)
+![bert-3](/assets/img/bert-3.png){: width="60%" class="center"}
 - 아무런 제약 조건 없이 bidirectional하게 학습 하면, 간접적으로 예측 대상 단어를 참조하게 되어 학습이 어려움. 이에 penalty 부여하는 방법으로써 MLM task 도입함.
 - **MLM**: input token의 일정 비율을 랜덤하게 마스킹하고, context 통해 이 마스킹된 토큰을 예측하는 task
 	- Cloze Test (빈칸 채우기 테스트)에서 영감 얻음
@@ -179,15 +177,14 @@ pin: true
 
 # 5. 실험 결과
 ### GLUE (General Language Understanding Evaluation) 
-![bert-result-1](/assets/img/bert-result-1.png){: width="50%"}
+![bert-result-1](/assets/img/bert-result-1.png){: width="50%" class="center"}
 - 다양한 자연어 이해 task의 모음
 	- **참고**: [GLUE leaderboard](https://gluebenchmark.com/leaderboard) ~~2024.09 현재 시점에서는BERT가 49위~~
 - $\text{BERT}_{\text{BASE}}$와 $\text{BERT}_{\text{LARGE}}$ 모두 기존 방법보다 우수한 성능 보임
 	- $\text{BERT}_{\text{BASE}}$와 OpenAI GPT는 attention masking을 제외하고 모델 아키텍처 측면에서 거의 동일하다는 점에서 흥미로운 결과.
 
 ### SQuAD(Stanford Question Answering Dataset)
-![bert-result-2](/assets/img/bert-result-2.png){: width="40%"}
-![bert-result-3](/assets/img/bert-result-3.png){: width="40%"}
+![bert-result-2](/assets/img/bert-result-2-3.png)
 - (question, passage) 데이터 주어지면 passage 내에서 answer span을 예측하는 task
 	- 정답의 시작과 끝 토큰 예측하는 classifier 사용
 - **v1.1**: passage에 답변 항상 존재
@@ -196,7 +193,7 @@ pin: true
 	- 인간만큼은 아니지만, 기존 baseline에 비해서는 우수한 성능 확인
 
 ### SWAG (Situations With Adversarial Generations)
-![bert-result-4](/assets/img/bert-result-4.png)
+![bert-result-4](/assets/img/bert-result-4.png){: width="50%"}
 - **상식 추론**: 문장이 주어지면, 4개의 선택지 중 가장 그럴듯하게 이어지는 문장 고르는 task
 - 역시나 좋은 성능 보임
 
@@ -205,7 +202,8 @@ pin: true
 	- *pre-training task의 영향 (MLM, NSP)*: 중요함
 	- *모델 크기의 영향*: 모델 클수록 성능 좋음
 	- *BERT의 feature 기반 접근방식*: fine-tuning과 성능 유사함
-- BERT의 feature 기반 접근방식 ![bert-result-5](/assets/img/bert-result-5.png)
+- BERT의 feature 기반 접근방식 
+![bert-result-5](/assets/img/bert-result-5.png){: width="60%"}
 	- BERT는 fine-tuning 및 feature-based approach 모두에서 효과적임
 
 
@@ -227,6 +225,5 @@ pin: true
 - [엘모(Embeddings from Language Model, ELMo)](https://wikidocs.net/33930)
 - [Cloze test](https://en.wikipedia.org/wiki/Cloze_test)
 - [WordPiece 임베딩(Byte Pair Encoding)](https://velog.io/@xuio/BERT-%EB%85%BC%EB%AC%B8-%ED%94%84%EB%A6%AC%EB%B7%B0-NLP-WordPiece-%EC%9E%84%EB%B2%A0%EB%94%A9Byte-Pair-Encoding)
-- [\[NLP | 논문리뷰\] BERT 상편](https://velog.io/@xuio/NLP-%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0-BERT-Pre-training-of-Deep-Bidirectional-Transformers-forLanguage-Understanding-%EC%83%81%ED%8E%B8)
-- [\[NLP | 논문리뷰\] BERT 하편](https://velog.io/@xuio/NLP-%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0-BERT-Pre-training-of-Deep-Bidirectional-Transformers-for-Language-Understanding-%ED%95%98%ED%8E%B8)
+- [BERT 상편](https://velog.io/@xuio/NLP-%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0-BERT-Pre-training-of-Deep-Bidirectional-Transformers-forLanguage-Understanding-%EC%83%81%ED%8E%B8), [하편](https://velog.io/@xuio/NLP-%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0-BERT-Pre-training-of-Deep-Bidirectional-Transformers-for-Language-Understanding-%ED%95%98%ED%8E%B8)
 - [\[최대한 자세하게 설명한 논문리뷰\] BERT (1)](https://hyunsooworld.tistory.com/entry/%EC%B5%9C%EB%8C%80%ED%95%9C-%EC%9E%90%EC%84%B8%ED%95%98%EA%B2%8C-%EC%84%A4%EB%AA%85%ED%95%9C-%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0-BERT-Pre-training-of-Deep-Bidirectional-Transformers-for-Language-Understanding-1)
