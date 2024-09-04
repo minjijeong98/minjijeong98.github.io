@@ -9,21 +9,21 @@ use_math: true
 pin: true
 ---
 
-# 논문 개요
+## 논문 개요
 - 제목: [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/abs/1810.04805)
 - 기관: Google AI Language
 - 발표: 2018.10
 - 인용수: 110,833회 (2024.09.03 기준)
 - 코드: [google-research/bert](https://github.com/google-research/bert)
 
-# 핵심 내용 요약
+## 핵심 내용 요약
 - BERT (Bidirectional Encoder Representations from Transformers) 모델 제안. 크게 다음 두 step으로 구성됨.
 	1. **pre-training**: unlabeled text data에서 deep bidirectional representation 학습
 	2. **fine-tuning**: 하나의 output layer만을 추가해, 특정 downstream task에 대해 labeled data 이용해 transfer learning
 - **결과**: 11개의 주요 NLP task에서 SoTA 달성 (토큰수준, 문장수준 Task 모두)
 - **연구의의**: task-specific architecture보다 저렴하면서도 뛰어난 성능 보이는 첫번째 fine-tuning 기반 representation 모델
 
-# 주요 용어 정리
+## 주요 용어 정리
 - **self-supervised learning**
     - 등장 배경: labeled data 수집 어려움
     - 비지도학습 기법 중 하나로, unlabeled data로부터 스스로(self) 학습하는 기법
@@ -48,7 +48,7 @@ pin: true
     - 학습을 통해 최적화시키려는 함수
     - loss function, cost function 등은 objective function의 한 종류임
 
-# 모델 등장 배경
+## 모델 등장 배경
 ### BERT 이전의 transfer learning 연구
 - BERT 이전에도 Language model의 pre-training은 다수 NLP task에서 우수한 성능 보여왔음
 	- **문장 수준 task**: 문장의 관계 전체적으로 분석해 예측하는 것을 목표로 하는 task (예: NLI, paraphrasing)
@@ -88,7 +88,7 @@ pin: true
 
 > GPT는 next token prediction에 초점을 맞추어 **Transformer decoder** (left-context-only version)만을 사용했고, BERT는 MLM 및 NSP를 위해 self-attention을 수행하는 **Transformer encoder** (bidirectional Transformer)만을 사용했다.
 
-# 4. 모델 구조
+## 모델 구조
 ### Multi-layer bidirectional Transformer encoder
 ![bert-1](/assets/img/bert-1.png)
 - 양방향 Transformer encoder를 여러 층 쌓음
@@ -176,7 +176,7 @@ pin: true
 | text classification / <br>sequence tagging | degenerate-none    | token representation |
 
 
-# 5. 실험 결과
+## 실험 결과
 ### GLUE (General Language Understanding Evaluation) 
 ![bert-result-1](/assets/img/bert-result-1.png){: width="50%"}
 - 다양한 자연어 이해 task의 모음
@@ -210,10 +210,10 @@ pin: true
 
 
 
-# Review
+## Review
 ### 느낀점
 - 이름은 익숙했지만 어떤 방식으로 작동하는지 잘 몰랐던 BERT 모델의 구조 알게돼서 재미있었음. Transformer의 확장이라 그런지, 모델 구조를 수식적으로 이해하기보다는 아이디어를 이해하는게 더 핵심이었던 논문이라고 생각함
-- BERT 기반 모델을 몇번 사용했었는데, 항상 pre-trained 모델을 그대로 가져다 썼었다. fine-tuning도 해봤으면 좋았겠다는 아쉬움이 생겼다.
+- BERT 기반 모델을 몇번 사용했었는데, 항상 pre-trained 모델을 그대로 가져다 썼었다. fine-tuning도 해봤으면 좋았겠다는 아쉬움이 생겼다. BERT를 쓰면서 그 기능의 절반밖에 이용을 못했던 느낌..
 - 막연히 알고있던 pre-training, fine-tuning, downstream task 등의 용어 되짚어볼 수 있었다. 이들 확인하다보니, fine-tuning의 다양한 전략들이 궁금해졌다. LoRA tuning과 일반적인 fine-tuning의 차이점도 궁금해졌다.
 
 ### Action Plan
@@ -221,7 +221,7 @@ pin: true
 - [ ] fine-tuning의 다양한 방식 살펴보기
 
 
-# Reference
+## Reference
 - [인공지능(AI) & 머신러닝(ML) 사전](https://wikidocs.net/book/5942)
 - [Transfer Learning vs Fine-tuning, 그리고 Pre-training](https://heeya-stupidbutstudying.tistory.com/entry/DL-Transfer-Learning-vs-Fine-tuning-%EA%B7%B8%EB%A6%AC%EA%B3%A0-Pre-training)
 - [An Introduction to Transfer Learning](https://www.aismartz.com/blog/an-introduction-to-transfer-learning/)
