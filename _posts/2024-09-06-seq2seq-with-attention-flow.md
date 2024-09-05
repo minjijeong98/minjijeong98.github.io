@@ -183,7 +183,7 @@ criterion = nn.CrossEntropyLoss(ignore_index = corpus.pad_index)
 - `nn.Embedding`, `nn.Linear` 등, 자주 사용되는 메소드들에 대해서는 어떤 구조로 작동하는지 확인해보고싶어졌다. '다들 그렇게 하니까..'라는 식으로 넘기고 싶지 않음
 
 #### attention의 영향?
-- attention을 적용한 버전의 seq2seq를 구현했는데, attention이 없는 버전에 비해 얼마나 성능이 좋아진건지, 수치화해보고 싶어졌다. (수치화가 힘들다면 정량평가라도..) 
+- attention을 적용한 버전의 seq2seq를 구현했는데, attention이 없는 버전에 비해 얼마나 성능이 좋아진건지, 수치화해보고 싶어졌다. (수치화가 힘들다면 정성평가라도..) 
 - 기본 seq2seq 모델을 코드로 짜고, 성능 비교할 수 있는 적절한 metric 선정해서 성능 비교해보자!
 
 
