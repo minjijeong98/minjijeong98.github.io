@@ -1,5 +1,5 @@
 ---
-title: Seq2Seq with Attention 모델 구현 Flow 별 주요 내용 정리
+title: Seq2Seq with Attention 모델 구현
 description: 부스트캠프의 과제로 seq2seq with attention 모델을 구현하면서, 각 flow 별 주요 내용 기록
 author: mj
 date: 2024-09-06 01:50:00 +0900
