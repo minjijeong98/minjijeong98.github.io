@@ -52,7 +52,7 @@ pin: true
 
 #### 1-1. 데이터 토큰화
 1. 각 시퀀스에 대해 토큰화 수행하는 함수 정의
-	1. `spacy`의 `tokenizer()` 사용해 각 시퀀스 대해 토큰화 수행
+	1. `spacy`의 `tokenizer()` 사용해 각 시퀀스 대해 토큰화 수행. 최대 길이 지정해 길이 초과하면 trimming도 수행
 	2. `lower = True` 면 각 토큰 소문자로 변환 (`lower()`)
 	3. 토큰 앞뒤로 `sos_token`, `eos_token` 추가
 2. 데이터셋 전체에 대해 1의 함수 적용하는 함수 정의
@@ -149,7 +149,7 @@ len(en_vocab), len(de_vocab)  # (5893, 7853)
 
 #### 3-2. Data loader 구현
 - padding 반영해서 data loader 구현
-	- `nn.utils.rnn.pad_sequence` 사용
+	- `nn.utils.rnn.pad_sequence` 사용 (이 함수 잘 알아두면 좋음. 확인해보기.)
 - batch size 지정
 - train, valid, test set 로드
 - train set에서 source(출발어; 영어)와 target(도착어; 독일어) 각각의 최대 시퀀스 길이 확인
@@ -181,6 +181,8 @@ criterion = nn.CrossEntropyLoss(ignore_index = corpus.pad_index)
 - **attention의 영향?**
     - attention을 적용한 버전의 seq2seq를 구현했는데, attention이 없는 버전에 비해 얼마나 성능이 좋아진건지, 수치화해보고 싶어졌다. (수치화가 힘들다면 정성평가라도..) 
     - 기본 seq2seq 모델을 코드로 짜고, 성능 비교할 수 있는 적절한 metric 선정해서 성능 비교해보자!
+- attention의 차이?
+    - Luong attention vs. Bahdanau attention
 
 
 ## Reference
