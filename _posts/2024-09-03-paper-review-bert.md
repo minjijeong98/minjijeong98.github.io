@@ -1,10 +1,15 @@
 ---
-title: (논문리뷰) BERT; Pre-training of Deep Bidirectional Transformers for Language Understanding
+title: 'BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding'
 description: Transformer의 주요 활용 사례로 언급되는 BERT 모델 리뷰
 author: mj
-date: 2024-09-03 23:45:00 +0900
-categories: [AI, NLP]
-tags: [paperreview, nlp, bert]
+date: '2024-09-03 23:45:00 +0900'
+categories:
+- AI/Data
+- Theoretical
+tags:
+- paperreview
+- nlp
+- bert
 use_math: true
 pin: true
 ---

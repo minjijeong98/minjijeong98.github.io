@@ -1,10 +1,14 @@
 ---
-title: 데이터 전처리 - 정규화, 표준화
+title: 언제 데이터 정규화, 표준화를 할까?
 description: 정규화, 표준화의 의미와 사용
 author: mj
-date: 2024-08-22 15:30:00 +0900
-categories: [EDA & Visualization, Data Preprocessing]
-tags: [boostcamp, preprocessing]
+date: '2024-08-22 15:30:00 +0900'
+categories:
+- AI/Data
+- Theoretical
+tags:
+- boostcamp
+- preprocessing
 use_math: true
 pin: true
 ---

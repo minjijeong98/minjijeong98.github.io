@@ -1,12 +1,19 @@
 ---
-title: Boostcamp 4주차 회고
+title: "[Boostcamp] 4주차 회고"
 description: Boostcamp AI Tech 7기 NLP Track - 4주차 회고
 author: mj
-date: 2024-08-30 15:00:00 +0900
-categories: [Activities, Boostcamp]
-tags: [boostcamp, review, AI, NLP]
-pin: true
+date: '2024-08-30 15:00:00 +0900'
+categories:
+- Activity
+- ExtraCurricular
+tags:
+- boostcamp
+- review
+- AI
+- NLP
+pin: false
 ---
+
 # Main Events
 
 ### 매일 아침, 코딩테스트 문제 풀기 시작

@@ -1,12 +1,19 @@
 ---
-title: Boostcamp 6주차 회고
+title: "[Boostcamp] 6주차 회고"
 description: Boostcamp AI Tech 7기 NLP Track - 6주차 회고
 author: mj
-date: 2024-09-13 11:30:00 +0900
-categories: [Activities, Boostcamp]
-tags: [boostcamp, review, AI, NLP]
-pin: true
+date: '2024-09-13 11:30:00 +0900'
+categories:
+- Activity
+- ExtraCurricular
+tags:
+- boostcamp
+- review
+- AI
+- NLP
+pin: false
 ---
+
 ## Main Events
 
 ### 팀 내 두런두런 질문 업로드
@@ -87,4 +94,4 @@ pin: true
 - 어떻게 하면 우리 팀의 팀원들이 고르게, 적극적으로 프로젝트에 참여할 수 있을까? 단순히 의지에 맡기고 '알아서 잘 참여하세요' 말하기보다는 자연스럽게 모두가 몰입하고 편하게 소통할 수 있는 분위기를 유도하고 싶다.
 
 ### [.] Takeaway
-본격적인 프로젝트 주제와 일정이 발표되면서, 프로젝트 및 협업에 대해 많이 생각했던 한 주였다. 개인적으로는 배운 내용들을 잘 기록해서, ML을 이용한 문제 해결 과정에 익숙해질 수 있기를 바라고, 팀에게는 모두가 열린 마음으로 새로운 시도를 하며 즐거운 기억으로 이 프로젝트가 기억될 수 있었으면 좋겠다. 
+본격적인 프로젝트 주제와 일정이 발표되면서, 프로젝트 및 협업에 대해 많이 생각했던 한 주였다. 개인적으로는 배운 내용들을 잘 기록해서, ML을 이용한 문제 해결 과정에 익숙해질 수 있기를 바라고, 팀에게는 모두가 열린 마음으로 새로운 시도를 하며 즐거운 기억으로 이 프로젝트가 기억될 수 있었으면 좋겠다.

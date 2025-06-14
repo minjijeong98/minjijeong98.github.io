@@ -2,12 +2,16 @@
 title: linear regression의 가정
 description: 선형회귀의 주요한 가정의 의미와 확인 방법을 살펴본다
 author: mj
-date: 2024-08-13 15:30:00 +0900
-categories: [Statistics, Linear Regression]
-tags: [statistics]
+date: '2024-08-13 15:30:00 +0900'
+categories:
+- AI/Data
+- Theoretical
+tags:
+- statistics
 use_math: true
 pin: true
 ---
+
 # linear regression의 가정
 
 회귀분석은 변수들의 관계를 기술하고 형태를 파악하는 통계적인 기법을 의미한다. 반응변수 $Y$와 설명변수 $X$ 사이의 단순한 함수 관계만을 나타낸다면 $Y=\beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_m X_m$과 같은 선형식을 제시할 수 있으나, 이것만으로는 데이터를 온전하게 반영한다고 볼 수 없다. 앞서의 선형식에서 통제되지 않는 부분을 반영하는 오차항(error term) $\epsilon$을 더함으로써 $X$와 $Y$ 간의 관계를 적절히 반영하는 선형 회귀식을 다음과 같이 정의할 수 있다.

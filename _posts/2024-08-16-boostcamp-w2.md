@@ -1,12 +1,19 @@
 ---
-title: Boostcamp 2주차 회고
+title: "[Boostcamp] 2주차 회고"
 description: Boostcamp AI Tech 7기 NLP Track - 2주차 회고
 author: mj
-date: 2024-08-16 14:00:00 +0900
-categories: [Activities, Boostcamp]
-tags: [boostcamp, review, AI, NLP]
-pin: true
+date: '2024-08-16 14:00:00 +0900'
+categories:
+- Activity
+- ExtraCurricular
+tags:
+- boostcamp
+- review
+- AI
+- NLP
+pin: false
 ---
+
 # 주간 학습 내용 요약
 
 ### 2024-08-12 월

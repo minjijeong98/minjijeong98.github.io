@@ -2,12 +2,19 @@
 title: Seq2Seq with Attention 모델 구현
 description: 부스트캠프의 과제로 seq2seq with attention 모델을 구현하면서, 각 flow 별 주요 내용 기록
 author: mj
-date: 2024-09-06 01:50:00 +0900
-categories: [AI, NLP]
-tags: [implementation, nlp, seq2seq, attention]
+date: '2024-09-06 01:50:00 +0900'
+categories:
+- AI/Data
+- Practical
+tags:
+- implementation
+- nlp
+- seq2seq
+- attention
 use_math: true
 pin: true
 ---
+
 > 부스트캠프의 과제로 **seq2seq with attention**를 구현했습니다. 해당 과제를 진행하며 전체적인 흐름을 이해하는데 가장 중점을 두었습니다. 모델 알고리즘을 코드로 어떻게 구현하는지, 구현한 모델을 어떻게 학습/평가/시각화하는지를 확인했고, 각 과정에서 기억해둘 내용을 기록합니다.
 
 ## 개요
