@@ -1,3 +1,26 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+// Homepage styles
+.page[data-slug="index"] {
+  // Category table styling
+  .center table {
+    width: 100%;
+
+    th:first-child,
+    td:first-child {
+      width: 140px;
+      font-weight: 600;
+    }
+
+    a {
+      font-weight: 600;
+    }
+  }
+
+  // Recent posts section (afterBody)
+  .page-footer {
+    border-top: 1px solid var(--lightgray);
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+  }
+}
