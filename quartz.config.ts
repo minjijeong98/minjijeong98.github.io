@@ -15,9 +15,9 @@ const config: QuartzConfig = {
     analytics: {
       provider: "plausible",
     },
-    locale: "en-US",
+    locale: "ko-KR",
     baseUrl: "minjijeong98.github.io",
-    ignorePatterns: [".obsidian", "inbox", "private"],
+    ignorePatterns: [".obsidian", "inbox", "private", "resource/_template"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",

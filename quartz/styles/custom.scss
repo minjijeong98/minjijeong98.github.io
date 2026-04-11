@@ -2,6 +2,12 @@
 
 // Homepage styles
 .page[data-slug="index"] {
+  // Intro paragraph
+  .center > p:first-of-type {
+    margin-bottom: 1.5rem;
+    color: var(--darkgray);
+  }
+
   // Category table styling
   .center table {
     width: 100%;
