@@ -2,10 +2,17 @@
 title: MJ WIKI
 ---
 
-Connecting the Dots
+AI·ML 시스템 개발 과정에서 공부하고 정리한 기술 지식을 기록합니다.
 
-| 카테고리 | 설명 |
-|---------|------|
-| [🗺 MOC](/moc) | Map of Contents (주제별 인덱스) |
-| [📓 Notes](/notes) | 기술 지식 및 개념 정리 (Knowledge) |
-| [📅 Log](/log) | 회고 (Takeaways) |
+---
+
+## 카테고리
+
+### [🗺 MOC](/moc)
+Map of Contents. 주제별로 관련 노트를 묶은 인덱스입니다.
+
+### [📓 Notes](/notes)
+개념 정리, 논문 리뷰, 기술 스택 분석 등 기술 지식을 정리한 단위 문서입니다.
+
+### [📅 Log](/log)
+작업 기록과 회고입니다. 트러블슈팅, 의사결정 맥락, 진행 상황을 남깁니다.

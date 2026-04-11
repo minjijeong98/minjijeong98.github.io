@@ -1,3 +1,6 @@
+// @ts-ignore
+import darkmodeScript from "./scripts/darkmode.inline"
+import darkmodeStyle from "./styles/darkmode.scss"
 import { pathToRoot } from "../util/path"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { classNames } from "../util/lang"
@@ -18,9 +21,12 @@ const SidebarHeader: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzC
       {/* Whale Logo */}
       <div class="sidebar-logo">
         <a href={baseDir}>
-          <img src={`${baseDir}/assets/whale_logo.jpg`} alt="MJ WIKI" />
+          <img src={`${baseDir}/resource/_asset/whale_logo.jpg`} alt="MJ WIKI" />
         </a>
       </div>
+
+      {/* Tagline */}
+      <p class="sidebar-tagline"><em>Connecting the dots</em></p>
 
       {/* Icon Bar */}
       <nav class="sidebar-icons">
@@ -91,6 +97,7 @@ const SidebarHeader: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzC
   )
 }
 
-SidebarHeader.css = style
+SidebarHeader.beforeDOMLoaded = darkmodeScript
+SidebarHeader.css = style + darkmodeStyle
 
 export default (() => SidebarHeader) satisfies QuartzComponentConstructor
