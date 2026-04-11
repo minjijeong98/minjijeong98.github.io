@@ -1,5 +1,6 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "../types"
 import style from "../styles/listPage.scss"
+import tagBrowserStyle from "../styles/tagBrowser.scss"
 import { PageList, SortFn } from "../PageList"
 import { FullSlug, getAllSegmentPrefixes, resolveRelative, simplifySlug } from "../../util/path"
 import { QuartzPluginData } from "../../plugins/vfile"
@@ -8,6 +9,8 @@ import { htmlToJsx } from "../../util/jsx"
 import { i18n } from "../../i18n"
 import { ComponentChildren } from "preact"
 import { concatenateResources } from "../../util/resources"
+// @ts-ignore
+import tagBrowserScript from "../scripts/tagBrowser.inline"
 
 interface TagContentOptions {
   sort?: SortFn
@@ -42,77 +45,82 @@ export default ((opts?: Partial<TagContentOptions>) => {
     ) as ComponentChildren
     const cssClasses: string[] = fileData.frontmatter?.cssclasses ?? []
     const classes = cssClasses.join(" ")
+
     if (tag === "/") {
-      const tags = [
+      // Build tag metadata sorted by most recently modified article (default)
+      const allTags = [
         ...new Set(
           allFiles.flatMap((data) => data.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes),
         ),
-      ].sort((a, b) => a.localeCompare(b))
+      ]
       const tagItemMap: Map<string, QuartzPluginData[]> = new Map()
-      for (const tag of tags) {
-        tagItemMap.set(tag, allPagesWithTag(tag))
+      for (const t of allTags) {
+        tagItemMap.set(t, allPagesWithTag(t))
       }
+
+      const tagMeta = allTags.map((t) => {
+        const pages = tagItemMap.get(t)!
+        const latestDate = pages.reduce((max, page) => {
+          const d = page.dates?.modified ?? page.dates?.created
+          return d && d > max ? d : max
+        }, new Date(0))
+        return { tag: t, count: pages.length, latestDate: latestDate.getTime() }
+      })
+
+      // Sort by most recent by default
+      tagMeta.sort((a, b) => b.latestDate - a.latestDate)
+
       return (
         <div class="popover-hint">
-          <article class={classes}>
-            <p>{content}</p>
-          </article>
-          <p>{i18n(cfg.locale).pages.tagContent.totalTags({ count: tags.length })}</p>
-          <div>
-            {tags.map((tag) => {
-              const pages = tagItemMap.get(tag)!
-              const listProps = {
-                ...props,
-                allFiles: pages,
-              }
-
-              const contentPage = allFiles.filter((file) => file.slug === `tags/${tag}`).at(0)
-
-              const root = contentPage?.htmlAst
-              const content =
-                !root || root?.children.length === 0
-                  ? contentPage?.description
-                  : htmlToJsx(contentPage.filePath!, root)
-
-              const tagListingPage = `/tags/${tag}` as FullSlug
-              const href = resolveRelative(fileData.slug!, tagListingPage)
-
-              return (
-                <div>
-                  <h2>
-                    <a class="internal tag-link" href={href}>
-                      {tag}
-                    </a>
-                  </h2>
-                  {content && <p>{content}</p>}
-                  <div class="page-listing">
-                    <p>
-                      {i18n(cfg.locale).pages.tagContent.itemsUnderTag({ count: pages.length })}
-                      {pages.length > options.numPages && (
-                        <>
-                          {" "}
-                          <span>
-                            {i18n(cfg.locale).pages.tagContent.showingFirst({
-                              count: options.numPages,
-                            })}
-                          </span>
-                        </>
-                      )}
-                    </p>
-                    <PageList limit={options.numPages} {...listProps} sort={options?.sort} />
-                  </div>
-                </div>
-              )
-            })}
+          <div class="tag-browser">
+            <div class="tag-browser-header">
+              <span class="tag-total">{i18n(cfg.locale).pages.tagContent.totalTags({ count: allTags.length })}</span>
+              <div class="tag-sort-controls">
+                <button class="tag-sort-btn active" data-sort="recent">최근 추가순</button>
+                <button class="tag-sort-btn" data-sort="count">언급 많은 순</button>
+              </div>
+            </div>
+            <ul id="tag-browser-list">
+              {tagMeta.map(({ tag: t, count, latestDate }) => {
+                const pages = tagItemMap.get(t)!
+                const tagListingPage = `/tags/${t}` as FullSlug
+                const href = resolveRelative(fileData.slug!, tagListingPage)
+                return (
+                  <li class="tag-item" data-count={count} data-latest={latestDate}>
+                    <button class="tag-header">
+                      <span class="tag-name">{t}</span>
+                      <span class="tag-count">{count}</span>
+                      <span class="tag-chevron">▸</span>
+                    </button>
+                    <ul class="tag-articles">
+                      {pages.map((page) => (
+                        <li>
+                          <a href={resolveRelative(fileData.slug!, page.slug!)}>
+                            {page.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title}
+                          </a>
+                          {page.dates?.modified && (
+                            <span class="tag-article-date">
+                              {page.dates.modified.toLocaleDateString("ko-KR", {
+                                year: "numeric", month: "short", day: "numeric",
+                              })}
+                            </span>
+                          )}
+                        </li>
+                      ))}
+                      <li class="tag-see-all">
+                        <a href={href}>전체 보기 →</a>
+                      </li>
+                    </ul>
+                  </li>
+                )
+              })}
+            </ul>
           </div>
         </div>
       )
     } else {
       const pages = allPagesWithTag(tag)
-      const listProps = {
-        ...props,
-        allFiles: pages,
-      }
+      const listProps = { ...props, allFiles: pages }
 
       return (
         <div class="popover-hint">
@@ -128,6 +136,7 @@ export default ((opts?: Partial<TagContentOptions>) => {
     }
   }
 
-  TagContent.css = concatenateResources(style, PageList.css)
+  TagContent.afterDOMLoaded = tagBrowserScript
+  TagContent.css = concatenateResources(style, PageList.css, tagBrowserStyle)
   return TagContent
 }) satisfies QuartzComponentConstructor

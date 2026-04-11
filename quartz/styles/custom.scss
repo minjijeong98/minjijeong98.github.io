@@ -1,4 +1,20 @@
 @use "./base.scss";
+@use "./variables.scss" as *;
+
+// Collapse empty right sidebar — extend content to full width
+@media all and ($desktop) {
+  .page > #quartz-body {
+    grid-template-columns: 320px 1fr !important;
+    grid-template-areas:
+      "grid-sidebar-left grid-header"
+      "grid-sidebar-left grid-center"
+      "grid-sidebar-left grid-footer" !important;
+  }
+
+  .sidebar.right {
+    display: none;
+  }
+}
 
 // Homepage styles
 .page[data-slug="index"] {

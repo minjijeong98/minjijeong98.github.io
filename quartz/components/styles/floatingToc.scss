@@ -1,0 +1,96 @@
+.floating-toc {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+
+  // Thin vertical bar (always visible)
+  .toc-bar {
+    width: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 8px 0;
+    cursor: pointer;
+
+    .toc-segment {
+      height: 24px;
+      background: var(--lightgray);
+      border-radius: 2px;
+      transition: background 0.2s ease, width 0.2s ease;
+
+      &.active {
+        background: var(--secondary);
+      }
+    }
+  }
+
+  // TOC panel (hidden by default, shown on hover)
+  .toc-panel {
+    position: absolute;
+    right: 12px;
+    background: var(--light);
+    border: 1px solid var(--lightgray);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    min-width: 200px;
+    max-width: 260px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+
+    .toc-panel-title {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 0 0 0.5rem 0;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin: 0;
+        line-height: 1.6;
+
+        a {
+          font-size: 0.8rem;
+          color: var(--darkgray);
+          text-decoration: none;
+          display: block;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          transition: color 0.15s ease;
+
+          &:hover,
+          &.active {
+            color: var(--secondary);
+          }
+        }
+      }
+    }
+  }
+
+  // Show panel on bar hover
+  &:hover .toc-panel {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+  }
+}

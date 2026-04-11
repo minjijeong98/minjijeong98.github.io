@@ -9,6 +9,7 @@ export const sharedPageComponents: SharedLayout = {
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/minjijeong98",
+      LinkedIn: "https://www.linkedin.com/in/minji-jeong-2396a4300",
     },
   }),
 }
@@ -40,18 +41,20 @@ export const defaultContentPageLayout: PageLayout = {
       }),
       condition: (page) => page.fileData.slug === "index",
     }),
+    Component.ConditionalRender({
+      component: Component.FloatingTOC(),
+      condition: (page) =>
+        page.fileData.slug !== "index" && (page.fileData.toc?.length ?? 0) > 0,
+    }),
   ],
   left: [
     Component.SidebarHeader(),
     Component.MobileOnly(Component.Spacer()),
     Component.Search({ enablePreview: false }),
     Component.Explorer(),
-  ],
-  right: [
     Component.Graph(),
-    Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
   ],
+  right: [],
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)
@@ -60,8 +63,9 @@ export const defaultListPageLayout: PageLayout = {
   left: [
     Component.SidebarHeader(),
     Component.MobileOnly(Component.Spacer()),
-    Component.Search(),
+    Component.Search({ enablePreview: false }),
     Component.Explorer(),
+    Component.Graph(),
   ],
   right: [],
 }
