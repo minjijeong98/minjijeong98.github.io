@@ -17,7 +17,7 @@ const config: QuartzConfig = {
     },
     locale: "en-US",
     baseUrl: "minjijeong98.github.io",
-    ignorePatterns: ["private", "templates", ".obsidian", "inbox"],
+    ignorePatterns: [".obsidian", "inbox", "private"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",

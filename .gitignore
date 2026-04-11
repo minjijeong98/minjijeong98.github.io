@@ -6,7 +6,9 @@ prof
 tsconfig.tsbuildinfo
 .obsidian
 .quartz-cache
-private/
-content/inbox/
 .replit
 replit.nix
+.space/
+content/inbox/
+content/private/
+
